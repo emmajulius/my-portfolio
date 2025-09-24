@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emanuel J. Lomayani - Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;}
+    body {background: #f4f7f9; color: #333; line-height: 1.6;}
+    header {background: #1f2937; color: #fff; padding: 30px 20px; text-align: center;}
+    header h1 {font-size: 2.8rem; margin-bottom: 10px;}
+    header p {font-size: 1.1rem; color: #cbd5e1;}
+    nav {margin-top: 15px;}
+    nav a {color: #fff; margin: 0 12px; text-decoration: none; font-weight: 500; transition: 0.3s;}
+    nav a:hover {color: #38bdf8;}
+    section {padding: 60px 20px; max-width: 1100px; margin: auto;}
+    h2 {margin-bottom: 25px; color: #1e293b; font-size: 2rem; border-bottom: 2px solid #38bdf8; display: inline-block; padding-bottom: 5px;}
+    .skills ul, .certificates ul {list-style: none; display: flex; flex-wrap: wrap;}
+    .skills li, .certificates li {background: #e2e8f0; color: #1e293b; padding: 10px 15px; margin: 5px; border-radius: 6px; font-weight: 500;}
+    .project-list {display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;}
+    .project {background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s;}
+    .project:hover {transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.15);}
+    .project h3 {margin-bottom: 10px; color: #0f172a;}
+    .project a {display: inline-block; margin-top: 10px; color: #38bdf8; text-decoration: none; font-weight: 500;}
+    .project a:hover {text-decoration: underline;}
+    footer {background: #1f2937; color: #fff; text-align: center; padding: 25px 20px; margin-top: 50px;}
+    .contact p a {color: #38bdf8; text-decoration: none;}
+    .contact p a:hover {text-decoration: underline;}
+
+    .about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* for responsiveness */
+}
+
+.about-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px; /* slightly rounded corners */
+  object-fit: cover;
+  border: 3px solid #38bdf8; /* optional accent border */
+}
+
+.about-content p {
+  flex: 1; /* text takes remaining space */
+}
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Emanuel J. Lomayani</h1>
+    <p>Graduate Computer Engineer | Programming | Networking</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certificates">Certificates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+  <h2>About Me</h2>
+  <div class="about-content">
+    <img src="Emmanuel.jpg" alt="Emanuel J. Lomayani" class="about-pic">
+    <p>Hello! My name is Emanuel J. Lomayani, a graduate student from Dar es Salaam Institute of Technology (DIT) with a Bachelor of Computer Engineering. I am passionate about building scalable systems and applications, ranging from web and mobile apps to embedded systems. I also have strong knowledge in networking and enterprise data protection. I enjoy solving complex problems and continuously learning new technologies.</p>
+  </div>
+</section>
+
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Python</li>
+      <li>Django</li>
+      <li>HTML & CSS</li>
+      <li>JavaScript</li>
+      <li>Flutter</li>
+      <li>PostgreSQL (psql)</li>
+      <li>SQL</li>
+      <li>Firebase</li>
+      <li>C++ (Embedded Systems)</li>
+      <li>Networking</li>
+      <li>Enterprise Data Protection</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-list">
+      <div class="project">
+        <h3>DIT Hostel App</h3>
+        <p>A mobile app for managing hostel facilities, room allocations, and student services at DIT.</p>
+        <a href="https://github.com/emmajulius/dit-hostel-app" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Crop Recommendation Mobile App</h3>
+        <p>A mobile application providing crop suggestions based on soil, weather, and location data to help farmers increase yield.</p>
+        <a href="https://github.com/emmajulius/crop-recommendation-app" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Mental Health System</h3>
+        <p>A platform for managing mental health support services, counseling, and student wellness monitoring.</p>
+        <a href="https://github.com/emmajulius/MENTAL-HEALTH-SYSTEM" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>School Management System</h3>
+        <p>A full-stack Django app for managing students, teachers, attendance, and results. Includes REST APIs for integration with mobile apps.</p>
+        <a href="https://github.com/emmajulius/school-management" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>EIRO Consultancy Website</h3>
+        <p>A website for EIRO Consultancy showcasing services, client projects, and contact information.</p>
+        <a href="https://github.com/emmajulius/eiro-consultancy" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Mobile App Enhanced Security (Embedded System)</h3>
+        <p>An embedded system project enhancing security for mobile applications through C++ and secure protocols.</p>
+        <a href="https://github.com/emmajulius/mobile-security-embedded" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project">
+        <h3>Boda Boda App</h3>
+        <p>A mobile app to manage boda boda rides, track drivers, and facilitate digital payments.</p>
+        <a href="https://github.com/emmajulius/boda-boda-app" target="_blank">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="certificates" class="certificates">
+    <h2>Certificates</h2>
+    <ul>
+      <li>Cisco Certified Network Associate (CCNA)</li>
+      <li>Certificate of Appreciation from TBL for IPT</li>
+      <li>Fundamentals of Satellite Remote Sensing for National Economies</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Phone Number: +255756556768</p>
+    <p>Email: <a href="mailto:emmajulius2512@gmail.com">emmajulius2512@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/emanuel-julius-lomayani-44b75b306" target="_blank">linkedin.com/in/emanuel-julius-lomayani-44b75b306</a></p>
+    <p>GitHub: <a href="https://github.com/emmajulius" target="_blank">github.com/emmajulius</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Emanuel J. Lomayani. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
