@@ -93,6 +93,15 @@ nav a:hover::after {
     .about-content p {flex: 1; font-size: 1.05rem;}
 
     /* Skills & Certificates */
+    .skills-category {
+      margin-bottom: 25px;
+    }
+    .skills-category h3 {
+      font-size: 1.25rem;
+      color: #1e293b;
+      margin-bottom: 12px;
+      font-family: 'Montserrat', sans-serif;
+    }
     .skills ul, .certificates ul {
       list-style: none;
       display: flex;
@@ -195,20 +204,56 @@ nav a:hover::after {
 
   <section id="skills" class="skills">
     <h2>Skills</h2>
-    <ul>
-      <li>Python</li>
-      <li>Django</li>
-      <li>HTML & CSS</li>
-      <li>JavaScript</li>
-      <li>Flutter</li>
-      <li>PostgreSQL (psql)</li>
-      <li>SQL</li>
-      <li>Firebase</li>
-      <li>C++ (Embedded Systems)</li>
-      <li>Networking</li>
-      <li>Enterprise Data Protection</li>
-      <li>Git & GitHub</li>
-    </ul>
+    
+    <div class="skills-category">
+      <h3>Frontend Development</h3>
+      <ul>
+        <li>HTML5, CSS3, JavaScript</li>
+        <li>React.js, Flutter (Cross-platform mobile development)</li>
+        <li>Responsive UI/UX Design (Mobile-first approach)</li>
+        <li>Bootstrap, Tailwind CSS</li>
+        <li>Basic state management (React Hooks / Flutter state handling)</li>
+      </ul>
+    </div>
+
+    <div class="skills-category">
+      <h3>Backend Development</h3>
+      <ul>
+        <li>Laravel (PHP Framework), Django, FastAPI</li>
+        <li>Firebase (Cloud Functions, Authentication, Firestore)</li>
+        <li>RESTful API Design & Development</li>
+        <li>MVC Architecture & Backend System Design</li>
+      </ul>
+    </div>
+
+    <div class="skills-category">
+      <h3>Database Management</h3>
+      <ul>
+        <li>PostgreSQL, MySQL, Firebase Firestore</li>
+        <li>Database Design & Optimization, Query Optimization & Data Modeling</li>
+      </ul>
+    </div>
+
+    <div class="skills-category">
+      <h3>Tools & Technologies</h3>
+      <ul>
+        <li>Git & GitHub (Version Control)</li>
+        <li>API Integration (3rd party services, Google APIs, payment APIs)</li>
+        <li>Postman / API Testing Tools</li>
+        <li>Deployment & Hosting (Firebase, shared hosting, cPanel)</li>
+      </ul>
+    </div>
+
+    <div class="skills-category">
+      <h3>Additional Skills</h3>
+      <ul>
+        <li>Authentication & Security (JWT, OAuth, Firebase Auth)</li>
+        <li>Basic DevOps Concepts</li>
+        <li>Debugging & Performance Optimization</li>
+        <li>Technical Documentation & Reporting</li>
+        <li>Basic Machine Learning & AI Concepts</li>
+      </ul>
+    </div>
   </section>
 
   <section id="projects" class="projects">
