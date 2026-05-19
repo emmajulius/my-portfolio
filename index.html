@@ -4,186 +4,164 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Emanuel J. Lomayani - Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
- <style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
     /* Reset & Base */
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {background: #f9fafb; color: #334155; font-family: 'Roboto', sans-serif; line-height: 1.7; scroll-behavior: smooth;}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f172a;
+      color: #cbd5e1;
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3, h4 { font-family: 'Outfit', sans-serif; color: #f8fafc; }
 
-    /* Header */
+    /* Navbar */
     header {
-      background: linear-gradient(135deg, #1f2937, #0f172a);
-      color: #fff;
-      padding: 50px 20px;
-      text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 20px;
     }
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 10px;
+    header .logo {
+      font-size: 1.5rem; font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-decoration: none;
     }
-    header p {font-size: 1.2rem; color: #cbd5e1;}
+    nav { display: flex; gap: 25px; }
+    nav a {
+      color: #e2e8f0; text-decoration: none; font-weight: 500; font-size: 0.95rem;
+      transition: 0.3s; position: relative;
+    }
+    nav a::after {
+      content: ''; position: absolute; width: 0; height: 2px; bottom: -5px; left: 0;
+      background: #38bdf8; transition: 0.3s;
+    }
+    nav a:hover { color: #38bdf8; }
+    nav a:hover::after { width: 100%; }
 
-    /* Navigation */
-    nav {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* ensures it wraps neatly on small screens */
-  gap: 18px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: 0.3s;
-  padding: 6px 10px;
-}
-
-nav a::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #38bdf8;
-  transition: width 0.3s;
-  margin: auto;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
+    /* Hero Section */
+    .hero {
+      min-height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 20px; background: radial-gradient(circle at 50% -20%, #1e293b, #0f172a);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: 10%; left: 10%; width: 40vw; height: 40vw; max-width: 400px; max-height: 400px;
+      background: rgba(56, 189, 248, 0.15); filter: blur(100px); border-radius: 50%;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 10%; right: 10%; width: 40vw; height: 40vw; max-width: 400px; max-height: 400px;
+      background: rgba(139, 92, 246, 0.15); filter: blur(100px); border-radius: 50%;
+    }
+    .hero-content { position: relative; z-index: 1; }
+    .hero h1 { font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 20px; line-height: 1.1; letter-spacing: -1px; }
+    .hero h1 span {
+      background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .hero p { font-size: 1.25rem; color: #94a3b8; max-width: 600px; margin: 0 auto 40px; }
+    .hero .cta {
+      display: inline-flex; align-items: center; gap: 10px; padding: 14px 36px;
+      background: linear-gradient(135deg, #38bdf8, #2563eb); color: #fff; font-weight: 600; text-decoration: none;
+      border-radius: 30px; transition: 0.3s; box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4); font-size: 1.1rem;
+    }
+    .hero .cta:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(37, 99, 235, 0.6); }
 
     /* Sections */
-    section {
-      padding: 70px 20px;
-      max-width: 1100px;
-      margin: auto;
-      animation: fadeIn 0.8s ease-in-out;
-    }
-    h2 {
-      margin-bottom: 25px;
-      color: #1e293b;
-      font-size: 2rem;
-      border-bottom: 3px solid #38bdf8;
-      display: inline-block;
-      padding-bottom: 6px;
-      font-family: 'Montserrat', sans-serif;
-    }
+    section { padding: 100px 20px; max-width: 1200px; margin: auto; position: relative; z-index: 1; }
+    .section-title { font-size: 2.5rem; margin-bottom: 60px; text-align: center; }
+    .section-title span { color: #38bdf8; }
 
-    /* About Section */
-    .about-content {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      flex-wrap: wrap;
+    /* About */
+    .about-content { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+    .about-image-wrapper { position: relative; width: 320px; height: 320px; margin: auto; }
+    .about-pic { width: 100%; height: 100%; object-fit: cover; border-radius: 24px; position: relative; z-index: 2; border: 1px solid rgba(255,255,255,0.1); }
+    .about-image-wrapper::after {
+      content: ''; position: absolute; inset: -15px; border-radius: 30px;
+      background: linear-gradient(135deg, #38bdf8, #8b5cf6); z-index: 1; filter: blur(20px); opacity: 0.5;
     }
-    .about-pic {
-      width: 160px;
-      height: 160px;
-      border-radius: 12px;
-      object-fit: cover;
-      border: 3px solid #38bdf8;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .about-content p {flex: 1; font-size: 1.05rem;}
+    .about-text { flex: 1; min-width: 300px; font-size: 1.15rem; color: #94a3b8; }
+    .about-text p { margin-bottom: 20px; }
 
-    /* Skills & Certificates */
-    .skills-category {
-      margin-bottom: 25px;
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+    .skill-card {
+      background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 35px; border-radius: 20px; transition: 0.3s; position: relative; overflow: hidden;
     }
-    .skills-category h3 {
-      font-size: 1.25rem;
-      color: #1e293b;
-      margin-bottom: 12px;
-      font-family: 'Montserrat', sans-serif;
+    .skill-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
+      background: linear-gradient(90deg, #38bdf8, #8b5cf6); opacity: 0; transition: 0.3s;
     }
-    .skills ul, .certificates ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .skills li, .certificates li {
-      background: #e2e8f0;
-      color: #1e293b;
-      padding: 10px 15px;
-      border-radius: 20px;
-      font-weight: 500;
-      transition: 0.3s;
-    }
-    .skills li:hover, .certificates li:hover {
-      background: #38bdf8;
-      color: #fff;
-      transform: translateY(-3px);
+    .skill-card:hover { transform: translateY(-5px); background: rgba(30, 41, 59, 0.7); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .skill-card:hover::before { opacity: 1; }
+    .skill-card h3 { font-size: 1.4rem; margin-bottom: 25px; display: flex; align-items: center; gap: 12px; }
+    .skill-card h3 i { color: #38bdf8; font-size: 1.6rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill-tag {
+      background: rgba(56, 189, 248, 0.08); color: #7dd3fc; border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 8px 16px; border-radius: 30px; font-size: 0.9rem; font-weight: 500;
     }
 
     /* Projects */
-    .project-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+    .project-card {
+      background: rgba(30, 41, 59, 0.4); border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 20px; padding: 35px; display: flex; flex-direction: column; transition: 0.3s;
     }
-    .project {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-color: rgba(139, 92, 246, 0.3); }
+    .project-icon { font-size: 2.2rem; background: linear-gradient(135deg, #38bdf8, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 20px; }
+    .project-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+    .project-card p { color: #94a3b8; flex-grow: 1; margin-bottom: 25px; }
+    .project-links a {
+      color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; transition: 0.3s;
     }
-    .project:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-    }
-    .project h3 {margin-bottom: 10px; color: #0f172a;}
-    .project a {
-      display: inline-block;
-      margin-top: 12px;
-      color: #38bdf8;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .project a i {margin-right: 6px;}
-    .project a:hover {text-decoration: underline;}
+    .project-links a:hover { color: #7dd3fc; gap: 12px; }
 
-    /* Contact */
-    .contact p {margin: 8px 0;}
-    .contact p a {color: #38bdf8; text-decoration: none;}
-    .contact p a:hover {text-decoration: underline;}
-    .contact i {margin-right: 8px; color: #0f172a;}
-
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #0f172a, #1f2937);
-      color: #fff;
-      text-align: center;
-      padding: 25px 20px;
-      margin-top: 50px;
-    }
-    footer .socials a {
-      color: #38bdf8;
-      margin: 0 10px;
-      font-size: 1.4rem;
+    /* Certificates */
+    .cert-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .cert-item {
+      background: rgba(30, 41, 59, 0.4); padding: 25px; border-radius: 16px;
+      display: flex; align-items: flex-start; gap: 20px; border: 1px solid rgba(255,255,255,0.05);
       transition: 0.3s;
     }
-    footer .socials a:hover {color: #fff;}
+    .cert-item:hover { background: rgba(30, 41, 59, 0.6); transform: translateX(5px); }
+    .cert-item i { color: #f59e0b; font-size: 1.8rem; margin-top: 2px; }
+    .cert-item span { color: #e2e8f0; font-size: 1.1rem; font-weight: 500; }
 
-    /* Animations */
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    /* Contact */
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+    .contact-card {
+      background: rgba(30, 41, 59, 0.4); padding: 40px 30px; border-radius: 20px; text-align: center;
+      border: 1px solid rgba(255,255,255,0.05); transition: 0.3s;
+    }
+    .contact-card:hover { background: rgba(30, 41, 59, 0.7); border-color: rgba(56,189,248,0.3); transform: translateY(-5px); }
+    .contact-card i { font-size: 2.5rem; color: #38bdf8; margin-bottom: 20px; }
+    .contact-card h4 { margin-bottom: 15px; color: #f8fafc; font-size: 1.3rem;}
+    .contact-card a, .contact-card p { color: #94a3b8; text-decoration: none; transition: 0.3s; font-size: 1.1rem; }
+    .contact-card a:hover { color: #38bdf8; }
+
+    /* Footer */
+    footer { text-align: center; padding: 40px 20px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 50px; color: #64748b; }
+    
+    @media (max-width: 768px) {
+      header { padding: 15px 20px; justify-content: center; }
+      nav { margin-top: 15px; flex-wrap: wrap; justify-content: center; gap: 15px; }
+      .about-content { flex-direction: column; text-align: center; }
+      .about-image-wrapper { width: 250px; height: 250px; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Emanuel J. Lomayani</h1>
-    <p>Graduate Computer Engineer | Programming | Networking</p>
+    <a href="#" class="logo">E. Lomayani</a>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -193,148 +171,234 @@ nav a:hover::after {
     </nav>
   </header>
 
-  <section id="about" class="about">
-  <h2>About Me</h2>
-  <div class="about-content">
-    <img src="Emmanuel.jpg" alt="Emanuel J. Lomayani" class="about-pic">
-    <p>Hello! My name is Emanuel J. Lomayani, a graduate student from Dar es Salaam Institute of Technology (DIT) with a Bachelor of Computer Engineering. I am passionate about building scalable systems and applications, ranging from web and mobile apps to embedded systems. I also have strong knowledge in networking and enterprise data protection. I enjoy solving complex problems and continuously learning new technologies.</p>
-  </div>
-</section>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Emanuel J. <span>Lomayani</span></h1>
+      <p>Graduate Computer Engineer | Transforming ideas into scalable, high-performance web and mobile applications.</p>
+      <a href="#projects" class="cta">View My Work <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
 
+  <section id="about" class="about">
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about-content">
+      <div class="about-image-wrapper">
+        <img src="Emmanuel.jpg" alt="Emanuel J. Lomayani" class="about-pic">
+      </div>
+      <div class="about-text">
+        <p>Hello! My name is Emanuel J. Lomayani, a graduate student from Dar es Salaam Institute of Technology (DIT) with a Bachelor of Computer Engineering.</p>
+        <p>I am passionate about building scalable systems and applications, ranging from robust web platforms and cross-platform mobile apps to secure embedded systems. With strong foundational knowledge in networking and enterprise data protection, I enjoy solving complex problems and continuously mastering new technologies.</p>
+      </div>
+    </div>
+  </section>
 
   <section id="skills" class="skills">
-    <h2>Skills</h2>
-    
-    <div class="skills-category">
-      <h3>Frontend Development</h3>
-      <ul>
-        <li>HTML5, CSS3, JavaScript</li>
-        <li>React.js, Flutter (Cross-platform mobile development)</li>
-        <li>Responsive UI/UX Design (Mobile-first approach)</li>
-        <li>Bootstrap, Tailwind CSS</li>
-        <li>Basic state management (React Hooks / Flutter state handling)</li>
-      </ul>
-    </div>
-
-    <div class="skills-category">
-      <h3>Backend Development</h3>
-      <ul>
-        <li>Laravel (PHP Framework), Django, FastAPI</li>
-        <li>Firebase (Cloud Functions, Authentication, Firestore)</li>
-        <li>RESTful API Design & Development</li>
-        <li>MVC Architecture & Backend System Design</li>
-      </ul>
-    </div>
-
-    <div class="skills-category">
-      <h3>Database Management</h3>
-      <ul>
-        <li>PostgreSQL, MySQL, Firebase Firestore</li>
-        <li>Database Design & Optimization, Query Optimization & Data Modeling</li>
-      </ul>
-    </div>
-
-    <div class="skills-category">
-      <h3>Tools & Technologies</h3>
-      <ul>
-        <li>Git & GitHub (Version Control)</li>
-        <li>API Integration (3rd party services, Google APIs, payment APIs)</li>
-        <li>Postman / API Testing Tools</li>
-        <li>Deployment & Hosting (Firebase, shared hosting, cPanel)</li>
-      </ul>
-    </div>
-
-    <div class="skills-category">
-      <h3>Additional Skills</h3>
-      <ul>
-        <li>Authentication & Security (JWT, OAuth, Firebase Auth)</li>
-        <li>Basic DevOps Concepts</li>
-        <li>Debugging & Performance Optimization</li>
-        <li>Technical Documentation & Reporting</li>
-        <li>Basic Machine Learning & AI Concepts</li>
-      </ul>
+    <h2 class="section-title">Technical <span>Skills</span></h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5 & CSS3</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Flutter</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">Bootstrap</span>
+          <span class="skill-tag">Responsive UI/UX</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-server"></i> Backend Development</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Laravel (PHP)</span>
+          <span class="skill-tag">Django</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">RESTful APIs</span>
+          <span class="skill-tag">MVC Architecture</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-database"></i> Database Management</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Firestore</span>
+          <span class="skill-tag">Query Optimization</span>
+          <span class="skill-tag">Data Modeling</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-tools"></i> Tools & Tech</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">API Integration</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">cPanel Hosting</span>
+          <span class="skill-tag">Google APIs</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3><i class="fas fa-shield-alt"></i> Additional Skills</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">JWT & OAuth</span>
+          <span class="skill-tag">DevOps Concepts</span>
+          <span class="skill-tag">Performance Optimization</span>
+          <span class="skill-tag">Technical Documentation</span>
+          <span class="skill-tag">Embedded Systems (C++)</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-      <div class="project">
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="project-grid">
+      
+      <div class="project-card">
+        <i class="fas fa-mobile-alt project-icon"></i>
         <h3>GoSpeed Hub</h3>
-        <p>A mobile application available on the App Store and Google Play Store as "GoSpeed Hub".</p>
+        <p>A mobile application available on the App Store and Google Play Store.</p>
+        <div class="project-links">
+          <a href="#" target="_blank">Available on Stores</a>
+        </div>
       </div>
 
-      <div class="project">
+      <div class="project-card">
+        <i class="fas fa-mobile-alt project-icon"></i>
         <h3>Reapeth</h3>
-        <p>A mobile application available on the App Store and Google Play Store as "Reapeth".</p>
+        <p>A mobile application available on the App Store and Google Play Store.</p>
+        <div class="project-links">
+          <a href="#" target="_blank">Available on Stores</a>
+        </div>
       </div>
 
-      <div class="project">
-        <h3>ORIONI GAS WEB APPLICATION</h3>
+      <div class="project-card">
+        <i class="fas fa-fire project-icon"></i>
+        <h3>ORIONI GAS WEB APP</h3>
         <p>The platform for buying and selling gas cylinders.</p>
-        <a href="https://orionigas.com/" target="_blank">Visit Website</a>
+        <div class="project-links">
+          <a href="https://orionigas.com/" target="_blank">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
       </div>
 
-      <div class="project">
+      <div class="project-card">
+        <i class="fas fa-church project-icon"></i>
         <h3>CHURCH WEBSITE</h3>
         <p>A church website for spreading the Gospel and the true Word of GOD.</p>
-        <a href="https://pastoreskakachaula.or.tz/" target="_blank">Visit Website</a>
+        <div class="project-links">
+          <a href="https://pastoreskakachaula.or.tz/" target="_blank">Visit Website <i class="fas fa-external-link-alt"></i></a>
+        </div>
       </div>
 
-      <div class="project">
-  <h3>Football Ticketing App</h3>
-  <p>A mobile application for booking and managing football match tickets, providing seat selection, digital passes, and real-time match updates.</p>
-  <a href="https://github.com/emmajulius/football-ticketing-app" target="_blank">View on GitHub</a>
-</div>
-
-      <div class="project">
-        <h3>Crop Recommendation Mobile App</h3>
-        <p>A mobile application providing crop suggestions based on soil, weather, and location data to help farmers increase yield.</p>
-        <a href="https://github.com/emmajulius/crop-recommendation-app" target="_blank">View on GitHub</a>
+      <div class="project-card">
+        <i class="fas fa-ticket-alt project-icon"></i>
+        <h3>Football Ticketing App</h3>
+        <p>A mobile application for booking and managing football match tickets with digital passes.</p>
+        <div class="project-links">
+          <a href="https://github.com/emmajulius/football-ticketing-app" target="_blank">View Source <i class="fab fa-github"></i></a>
+        </div>
       </div>
-      <div class="project">
+
+      <div class="project-card">
+        <i class="fas fa-leaf project-icon"></i>
+        <h3>Crop Recommendation App</h3>
+        <p>Provides crop suggestions based on soil, weather, and location data to help farmers increase yield.</p>
+        <div class="project-links">
+          <a href="https://github.com/emmajulius/crop-recommendation-app" target="_blank">View Source <i class="fab fa-github"></i></a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <i class="fas fa-brain project-icon"></i>
         <h3>Mental Health System</h3>
-        <p>A platform for managing mental health support services, counseling, and student wellness monitoring.</p>
-        <a href="https://github.com/emmajulius/MENTAL-HEALTH-SYSTEM" target="_blank">View on GitHub</a>
+        <p>A platform for managing mental health support services, counseling, and student wellness.</p>
+        <div class="project-links">
+          <a href="https://github.com/emmajulius/MENTAL-HEALTH-SYSTEM" target="_blank">View Source <i class="fab fa-github"></i></a>
+        </div>
       </div>
-      <div class="project">
+
+      <div class="project-card">
+        <i class="fas fa-school project-icon"></i>
         <h3>School Management System</h3>
-        <p>A full-stack Django app for managing students, teachers, attendance, and results. Includes REST APIs for integration with mobile apps.</p>
-        <a href="https://github.com/emmajulius/school-management" target="_blank">View on GitHub</a>
+        <p>A full-stack Django app for managing students, teachers, and results with REST APIs.</p>
+        <div class="project-links">
+          <a href="https://github.com/emmajulius/school-management" target="_blank">View Source <i class="fab fa-github"></i></a>
+        </div>
       </div>
-      <div class="project">
+
+      <div class="project-card">
+        <i class="fas fa-building project-icon"></i>
         <h3>EIRO Consultancy Website</h3>
-        <p>A website for EIRO Consultancy showcasing services, client projects, and contact information.</p>
-        <a href="https://github.com/emmajulius/eiro-consultancy" target="_blank">View on GitHub</a>
+        <p>A corporate website showcasing consultancy services, client projects, and contact info.</p>
+        <div class="project-links">
+          <a href="https://github.com/emmajulius/eiro-consultancy" target="_blank">View Source <i class="fab fa-github"></i></a>
+        </div>
       </div>
-      <div class="project">
-        <h3>Mobile App Enhanced Security (Embedded System)</h3>
-        <p>An embedded system project enhancing security for mobile applications through C++ and secure protocols.</p>
-        <a href="https://github.com/emmajulius/mobile-security-embedded" target="_blank">View on GitHub</a>
+
+      <div class="project-card">
+        <i class="fas fa-shield-alt project-icon"></i>
+        <h3>Mobile App Enhanced Security</h3>
+        <p>An embedded system project enhancing security for mobile apps through C++ and secure protocols.</p>
+        <div class="project-links">
+          <a href="https://github.com/emmajulius/mobile-security-embedded" target="_blank">View Source <i class="fab fa-github"></i></a>
+        </div>
       </div>
-      <div class="project">
+
+      <div class="project-card">
+        <i class="fas fa-motorcycle project-icon"></i>
         <h3>Boda Boda App</h3>
-        <p>A mobile app to manage boda boda rides, track drivers, and facilitate digital payments.</p>
-        <a href="https://github.com/emmajulius/boda-boda-app" target="_blank">View on GitHub</a>
+        <p>A mobile app to manage rides, track drivers, and facilitate digital payments.</p>
+        <div class="project-links">
+          <a href="https://github.com/emmajulius/boda-boda-app" target="_blank">View Source <i class="fab fa-github"></i></a>
+        </div>
       </div>
+
     </div>
   </section>
 
   <section id="certificates" class="certificates">
-    <h2>Certificates</h2>
-    <ul>
-      <li>Cisco Certified Network Associate (CCNA)</li>
-      <li>Certificate of Appreciation from TBL for IPT</li>
-      <li>Fundamentals of Satellite Remote Sensing for National Economies</li>
-    </ul>
+    <h2 class="section-title">Honors & <span>Certificates</span></h2>
+    <div class="cert-list">
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <span>Cisco Certified Network Associate (CCNA)</span>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <span>Certificate of Appreciation from TBL for IPT</span>
+      </div>
+      <div class="cert-item">
+        <i class="fas fa-award"></i>
+        <span>Fundamentals of Satellite Remote Sensing for National Economies</span>
+      </div>
+    </div>
   </section>
 
   <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Phone Number: +255756556768</p>
-    <p>Email: <a href="mailto:emmajulius2512@gmail.com">emmajulius2512@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/emanuel-lomayani" target="_blank">linkedin.com/in/emanuel</a></p>
-    <p>GitHub: <a href="https://github.com/emmajulius" target="_blank">github.com/emmajulius</a></p>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-phone-alt"></i>
+        <h4>Call Me</h4>
+        <p>+255 756 556 768</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h4>Email Me</h4>
+        <a href="mailto:emmajulius2512@gmail.com">emmajulius2512@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-linkedin-in"></i>
+        <h4>LinkedIn</h4>
+        <a href="https://www.linkedin.com/in/emanuel-lomayani" target="_blank">linkedin.com/in/emanuel</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-github"></i>
+        <h4>GitHub</h4>
+        <a href="https://github.com/emmajulius" target="_blank">github.com/emmajulius</a>
+      </div>
+    </div>
   </section>
 
   <footer>
